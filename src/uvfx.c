@@ -288,6 +288,8 @@ static const char *get_tech_name_and_multiplier(enum gs_color_space current_spac
 
 static void uvfx_source_render(void *data, gs_effect_t *effect)
 {
+	UNUSED_PARAMETER(effect);
+	
 	struct uvfx_source *filter = data;
 	if (!os_atomic_load_bool(&filter->texture_loaded))
 		return;
